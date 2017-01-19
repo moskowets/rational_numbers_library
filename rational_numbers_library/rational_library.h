@@ -6,9 +6,10 @@ namespace rational_lib
 	class Rational
 	{
 	public:
+		Rational();
 		Rational(int numerator_input);
 		Rational(int numerator_input, int denominator_input);
-		Rational operator()(int numerator_input, int denominator_input);
+		Rational& operator()(int numerator_input, int denominator_input);
 		operator bool() const;
 		double get_double() const;
 	private:

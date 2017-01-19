@@ -1,7 +1,11 @@
 #include "rational_library.h"
+using std::cout;
 
 namespace rational_lib
 {
+	rational_lib::Rational::Rational() 
+		:numerator{ 0 },
+		denominator{ 1 } {}	
 	Rational::Rational(int numerator_input)
 	{
 		set_value(numerator_input, 1);
@@ -10,10 +14,10 @@ namespace rational_lib
 	{
 		set_value(numerator_input, denominator_input);
 	}
-	Rational Rational::operator()(int numerator_input, int denominator_input)
-	{
-		set_value(numerator_input, denominator_input);
-		return Rational{ numerator_input , denominator_input };
+	Rational& Rational::operator()(int numerator_input, int denominator_input)
+	{		
+		set_value(numerator_input, denominator_input);		
+		return *this;
 	}
 	Rational::operator bool() const
 	{
@@ -21,7 +25,7 @@ namespace rational_lib
 		else return true;
 	}
 	double Rational::get_double() const
-	{
+	{		
 		return double(numerator) / double(denominator);
 	}
 	void Rational::set_value(int numerator_input, int denominator_input)
