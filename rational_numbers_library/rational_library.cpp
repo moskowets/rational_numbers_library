@@ -1,5 +1,4 @@
 #include "rational_library.h"
-using std::cout;
 
 namespace rational_lib
 {
